@@ -25,7 +25,6 @@ def get_id(seat)
 end
 
 
-
 ids = File.open( "input.txt").map{|line| get_id(line)}
 
 seat = (ids.min..ids.max).find{|id| ids.include?(id-1) && ids.include?(id+1) && !ids.include?(id)}
