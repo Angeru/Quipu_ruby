@@ -1,2 +1,2 @@
 source :rubygems
-gem 'rspec'
+gem 'rspec',  '>=3.1' 

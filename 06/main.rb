@@ -1,16 +1,19 @@
-def read_data
-    total = []
-    group = []
-    File.open( "input.txt").each do |line|
-        if line == "\n"
-            total << group
-            group = []
-        else
-            group << line.chomp
+class Main06a
+    def self.read_data
+        total = []
+        group = []
+        File.open( "./06/input.txt").each do |line|
+            if line == "\n"
+                total << group
+                group = []
+            else
+                group << line.chomp
+            end
         end
+        total << group
+        total
     end
-    total << group
-    total
+    def self.run
+        read_data.sum{|group| group.inject(:+).chars.uniq.count}
+    end
 end
-
-read_data.sum{|group| group.inject(:+).chars.uniq.count}
